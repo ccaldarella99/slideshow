@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" href="slideshow.css">
+		<title>SLIDESHOW</title>
+	</head>
+	<body>
+		
+		
+
+		<div id="img-reel" class="h-center">
+			<div id="img-reel-settings">
+				<div id="img-reel-layout">
+					&nbsp;
+					<div id="img-reel-linear" onclick="toggleSlideShowLayout(0);" class="ss-active">
+						<div id="img-reel-linear-line"><div class="img-portrait-css img-css"></div><div class="img-portrait-css  img-css"></div></div><div id="img-reel-linear-line"><div class="img-portrait-css img-css"></div><div class="img-portrait-css img-css"></div></div>
+					</div>
+					&nbsp;
+					<div id="img-reel-grid" onclick="toggleSlideShowLayout(1);">
+						<div id="img-reel-grid-line">
+							<div class="img-grid-css img-css"></div><div class="img-grid-css img-css"></div>
+						</div>
+						<div id="img-reel-grid-line">
+							<div class="img-grid-css img-css"></div><div class="img-grid-css img-css"></div>
+						</div>
+					</div>
+					&nbsp;
+				</div>
+			</div>
+			<!-- Change linear to have carousel feature -->
+			<!-- Add another style selection: 2col, 3col, 4col -->
+			<!-- This all involves making an actual GRID system using the grid.css layout -->
+		
+
+			<div id="linear-layout" class="display:block;">
+				<div id="top-row">
+					<img class="reel" src="res/sanddunes.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 0);" />
+					<img class="reel" src="res/tacoboutit.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 1);" />
+					<img class="reel" src="res/engagement.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 2);" />
+				</div>
+				<div id="bottom-row">
+					<img class="reel" src="res/bobnlinda.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 3);" />
+					<img class="reel" src="res/lighthouse.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 4);" />
+				</div>
+			</div>
+			<div id="grid-layout" style="display:none;">
+				<div id="top-row">
+					<img class="reel" src="res/sanddunes.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 0);" />
+					<img class="reel" src="res/tacoboutit.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 1);" />
+					<img class="reel" src="res/engagement.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 2);" />
+				</div>
+				<br/>
+				<div id="bottom-row">
+					<img class="reel" src="res/bobnlinda.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 3);" />
+					<img class="reel" src="res/lighthouse.jpg" onclick="openOverlay('slideshow', 'slideshow-contents', 4);" />
+					<div class="filler-space-for-img"></div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay" id="slideshow">
+			<a href="javascript:void(0)" class="close-btn" onclick="closeOverlay('slideshow','slideshow-contents');">&times;</a>
+			<div class="item-overlay" id="slideshow-contents">
+				<div class="ssLeft l-btn" onclick="slideShow(-1)">
+					<label id="left-btn">&#10094;</label>
+				</div>
+				
+				<img class="slide-img" src="res/sanddunes.jpg" />
+				<img class="slide-img" src="res/tacoboutit.jpg" />
+				<img class="slide-img" src="res/engagement.jpg" />
+				<img class="slide-img" src="res/bobnlinda.jpg" />
+				<img class="slide-img" src="res/lighthouse.jpg" />
+
+				<div class="ssRight r-btn" onclick="slideShow(1)">
+					<label id="right-btn">&#10095;</label>
+				</div>
+				<p id="escape">
+					(press escape to exit)
+				</p>
+			</div>
+		</div>
+		
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="slideshow.js"></script>
+	</body>
+</html>
